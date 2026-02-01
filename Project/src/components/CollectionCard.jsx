@@ -1,14 +1,14 @@
-import { Bookmark } from "lucide-react";
+import { BookmarkX } from "lucide-react"
 import { useDispatch } from "react-redux";
-import { addCollection, addedToast } from "../redux/features/collectionSlice";
+import { removeCollection, removeToast } from "../redux/features/collectionSlice";
 
-const ResultCard = ({ item }) => {
+const CollectionCard = ({ item }) => {
 
   const dispatch = useDispatch()
 
-  const addToCollection = (item) => {
-    dispatch(addCollection(item))
-    dispatch(addedToast())
+  const removeFromCollection = (item) => {
+    dispatch(removeToast())
+    dispatch(removeCollection(item.id))
   }
 
   return (
@@ -34,10 +34,10 @@ const ResultCard = ({ item }) => {
         active:scale-95
         "
           onClick={() => {
-            addToCollection(item)
+            removeFromCollection(item)
           }}
         >
-          <Bookmark size={20} />
+          <BookmarkX size={20} />
         </button>
       </div>
 
@@ -45,4 +45,4 @@ const ResultCard = ({ item }) => {
   )
 }
 
-export default ResultCard
+export default CollectionCard

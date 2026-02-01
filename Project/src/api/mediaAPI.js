@@ -5,7 +5,7 @@ const PEXELS_KEY = import.meta.env.VITE_PEXELS_KEY
 const TENOR_KEY = import.meta.env.VITE_TENOR_KEY
 
 // Photos Data
-export async function fetchPhotos(query, page = 1, per_page = 30) {
+export async function fetchPhotos(query, page = 1, per_page = 20) {
   const res = await axios.get('https://api.unsplash.com/search/photos', {
     params: { query, page, per_page },
     headers: { Authorization: `Client-ID ${UNSPLASH_KEY}` }
@@ -15,7 +15,7 @@ export async function fetchPhotos(query, page = 1, per_page = 30) {
 }
 
 // Videos Data
-export async function fetchVideos(query, per_page = 30) {
+export async function fetchVideos(query, per_page = 20) {
   const res = await axios.get('https://api.pexels.com/videos/search', {
     params: { query, per_page },
     headers: { Authorization: PEXELS_KEY }
@@ -25,7 +25,7 @@ export async function fetchVideos(query, per_page = 30) {
 }
 
 // Gif Data
-export async function fetchGIF(query, limit = 30) {
+export async function fetchGIF(query, limit = 20) {
   const res = await axios.get('https://tenor.googleapis.com/v2/search', {
     params: { q: query, key: TENOR_KEY, limit },
   })

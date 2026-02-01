@@ -1,1 +1,61 @@
 @import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+
+* {
+  font-family: "Google Sans", sans-serif;
+}
+
+:root {
+  --c1: #452829;
+  --c2: #57595B;
+  --c3: #E8D1C5;
+  --c4: #F3E8DF;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(96%);
+}
+
+#bottom {
+  background: linear-gradient(transparent, black);
+}
+
+:root {
+  /* Scrollbar size */
+  --scrollbar-size: 6px;
+  --scrollbar-radius: 999px;
+
+  /* Track */
+  --scrollbar-track: #0b0c10;
+
+  /* Thumb (main accent colors) */
+  --scrollbar-thumb: linear-gradient(180deg,
+      #c9c9cd,
+      #8f899a,
+      #727c87);
+
+  /* Effects */
+  --scrollbar-shadow: 0 3px 8px rgba(0, 0, 0, 0.45);
+}
+
+/* Base */
+::-webkit-scrollbar {
+  width: var(--scrollbar-size);
+  height: var(--scrollbar-size);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+/* Thumb */
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: var(--scrollbar-radius);
+  box-shadow: var(--scrollbar-shadow);
+}

@@ -1,38 +1,23 @@
-import { fetchGIF, fetchPhotos, fetchVideos } from "./api/mediaAPI"
+import { Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import CollectionPage from "./pages/CollectionPage";
+import Navbar from "./components/Navbar";
+import { ToastContainer } from 'react-toastify';
 
 const App = () => {
 
   return (
-    <div className='w-full h-screen bg-gray-950 text-white'>
-      <button
-        className="py-3 px-10 rounded-xl text-xl cursor-pointer bg-gray-800 active:scale-95 m-8"
-        onClick={async () => {
-          console.log("Photos");
-          let data = await fetchPhotos('dog')
-          console.log(data.results)
-        }}>
-        Get Photo
-      </button>
+    <div className='w-full min-h-screen bg-gray-950 text-white'>
 
-      <button
-        className="py-3 px-10 rounded-xl text-xl cursor-pointer bg-gray-800 active:scale-95 m-8"
-        onClick={async () => {
-          console.log("Videos");
-          let data = await fetchVideos('dog')
-          console.log(data.data.videos)
-        }}>
-        Get Videos
-      </button>
+      <Navbar />
 
-      <button
-        className="py-3 px-10 rounded-xl text-xl cursor-pointer bg-gray-800 active:scale-95 m-8"
-        onClick={async () => {
-          console.log("Gifs");
-          let data = await fetchGIF('dog')
-          console.log(data.data.results)
-        }}>
-        Get Gifs
-      </button>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/collection" element={<CollectionPage />} />
+      </Routes>
+
+      <ToastContainer />
+
     </div>
   )
 }
