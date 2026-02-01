@@ -23,8 +23,6 @@ const collectionSlice = createSlice({
     },
 
     removeCollection: (state, action) => {
-      console.log(action);
-
       state.items = state.items.filter(
         item => item.id !== action.payload
       )
@@ -32,10 +30,8 @@ const collectionSlice = createSlice({
     },
 
     clearCollection: (state) => {
-      console.log("Ho Gya Clear");
       state.items = []
       localStorage.clear()
-      console.log(state.items);
       localStorage.getItem('collection')
     },
 

@@ -59,11 +59,20 @@ const ResultGrid = () => {
     getData()
   }, [query, activeTab, dispatch])
 
-  if (error) return <h1>Error</h1>
-  if (loading) return <h1>Loading...</h1>
+  if (error) return <div className="w-full h-96 flex items-center justify-center">
+    <h1 className="text-2xl text-center whitespace-pre-wrap tracking-widest font-bold uppercase sm:text-4xl sm:whitespace-normal">
+      Error...
+    </h1>
+  </div>
+
+  if (loading) return <div className="w-full h-96 flex items-center justify-center">
+    <h1 className="text-2xl text-center whitespace-pre-wrap tracking-widest font-bold uppercase sm:text-4xl sm:whitespace-normal">
+      Loading...
+    </h1>
+  </div>
 
   return (
-    <div className="flex flex-wrap gap-8 justify-center sm:justify-between px-10 pb-8">
+    <div className="flex flex-wrap gap-8 justify-center md:justify-between px-10 pb-10">
       {results.map((item, idx) => {
         return <div key={idx}>
           <ResultCard item={item} />

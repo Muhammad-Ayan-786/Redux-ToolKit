@@ -21,8 +21,7 @@ const ResultCard = ({ item }) => {
       </a>
 
       <div
-        id="bottom"
-        className="h-[30%] w-full flex gap-3 items-center justify-between px-3 py-6 absolute bottom-0 text-white"
+        className="bottomCard h-[30%] w-full flex gap-3 items-center justify-between px-3 py-6 absolute bottom-0 text-white"
       >
         <h2 className="text-md font-semibold capitalize h-13 overflow-hidden">
           {item.title}

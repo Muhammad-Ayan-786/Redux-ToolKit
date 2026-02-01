@@ -21,8 +21,9 @@ button:active {
   transform: scale(96%);
 }
 
-#bottom {
-  background: linear-gradient(transparent, black);
+.bottomCard {
+  /* background: linear-gradient(transparent, black); */
+  background: linear-gradient(to bottom, transparent, black);
 }
 
 :root {
